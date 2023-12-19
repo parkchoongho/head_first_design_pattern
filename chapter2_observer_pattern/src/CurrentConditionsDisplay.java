@@ -8,8 +8,9 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement{
     }
     // The update() method is called whenever the weather measurements change.
     // In this case, we save the temperature and humidity and call display().
-    public void update(float temperature, float humidity, float pressure) {
-        this.temperature = temperature; this.humidity = humidity;
+    public void update() {
+        this.temperature = weatherData.getTemperature();
+        this.humidity = weatherData.getHumidity();
         display();
     }
     public void display() {
